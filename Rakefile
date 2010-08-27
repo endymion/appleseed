@@ -5,9 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "appleseed"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "rap@endymion.com"
+    gem.summary = %Q{Kick-start a Rails 3 project.}
+    gem.description = %Q{Generator for a Rails 3 app that will also push the project to GitHub and Heroku.}
     gem.homepage = "http://github.com/endymion/appleseed"
     gem.authors = ["Ryan Alyn Porter"]
     gem.add_development_dependency "rspec", ">= 1.2.9"

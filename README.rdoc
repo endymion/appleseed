@@ -1,6 +1,6 @@
 = appleseed
 
-Description goes here.
+Appleseed provides a generator for creating/kickstarting a new project.
 
 == Note on Patches/Pull Requests
  
