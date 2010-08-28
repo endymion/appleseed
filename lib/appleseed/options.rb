@@ -30,16 +30,6 @@ class Appleseed
 
           o.separator ""
 
-          o.on('--user-name [USER_NAME]', "the user's name, ie that is credited in the LICENSE") do |user_name|
-            self[:user_name] = user_name
-          end
-
-          o.on('--user-email [USER_EMAIL]', "the user's email, ie that is credited in the Gem specification") do |user_email|
-            self[:user_email] = user_email
-          end
-
-          o.separator ""
-
           o.on('--github-username [GITHUB_USERNAME]', "name of the user on GitHub to set the project up under") do |github_username|
             self[:github_username] = github_username
           end
@@ -55,6 +45,18 @@ class Appleseed
           o.on('--no-github', 'don\'t create the repository on GitHub') do
             self[:no_github] = true
           end
+
+          o.on('--no-heroku', 'don\'t create a deployment on Heroku') do
+            self[:no_heroku] = true
+          end
+
+          o.separator ""
+          
+          o.on('--template [template_url]', "the URL or path for a custom Rails template file") do |template_url|
+            self[:template_url] = template_url
+          end
+          
+          o.separator ""
 
           o.on_tail('-h', '--help', 'display this help and exit') do
             self[:show_help] = true

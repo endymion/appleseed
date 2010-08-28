@@ -31,12 +31,14 @@ class Appleseed
     attr_accessor :target_dir, :user_name, :user_email, :summary, :homepage,
                   :description, :project_name, 
                   :repo, :should_create_github_repository, 
+                  :should_create_heroku_deployment, 
                   :testing_framework, :documentation_framework,
                   :should_use_cucumber, :should_use_bundler,
                   :should_setup_rubyforge, :should_use_reek, :should_use_roodi,
                   :development_dependencies,
                   :options,
-                  :git_remote
+                  :git_remote,
+                  :template_url
 
     def initialize(options = {})
       self.options = options
@@ -50,7 +52,9 @@ class Appleseed
 
       self.summary                = options[:summary] || 'TODO: one-line summary of your gem'
       self.description            = options[:description] || 'TODO: longer description of your gem'
-      self.should_use_cucumber    = options[:use_cucumber]
+
+      # self.template_url    = options[:template_url] || 'http://github.com/endymion/appleseed/raw/master/templates/default.rb'
+      self.template_url    = options[:template_url] || 'http://localhost/projects/appleseed/templates/default.rb'
 
       self.user_name       = options[:user_name]
       self.user_email      = options[:user_email]
@@ -62,6 +66,8 @@ class Appleseed
       raise NoGitUserEmail unless self.user_email
 
       extend GithubMixin
+
+      self.should_create_heroku_deployment = !options[:no_heroku]
       
     end
 
@@ -72,6 +78,10 @@ class Appleseed
       if should_create_github_repository
         create_and_push_repo
         $stdout.puts "Appleseed has pushed your git repository to #{git_remote}"
+      end
+      if should_create_heroku_deployment
+        create_and_push_deployment
+        $stdout.puts "Appleseed has pushed your web application to heroku"
       end
     end
 
@@ -124,22 +134,6 @@ class Appleseed
 
       create_rails_application target_dir
 
-      # output_template_in_target '.gitignore'
-      # output_template_in_target 'Rakefile'
-      # output_template_in_target 'Gemfile' if should_use_bundler
-      # output_template_in_target 'LICENSE'
-      # output_template_in_target 'README.rdoc'
-      # output_template_in_target '.document'
-      # 
-      # mkdir_in_target           lib_dir
-      # touch_in_target           File.join(lib_dir, lib_filename)
-      # 
-      # mkdir_in_target           test_dir
-      # output_template_in_target File.join(testing_framework.to_s, 'helper.rb'),
-      #                           File.join(test_dir, test_helper_filename)
-      # output_template_in_target File.join(testing_framework.to_s, 'flunking.rb'),
-      #                           File.join(test_dir, test_filename)
-
     end
 
     def render_template(source)
@@ -150,37 +144,14 @@ class Appleseed
       template.result(binding).gsub(/\n\n\n+/, "\n\n")
     end
 
-    def output_template_in_target(source, destination = source)
-      final_destination = File.join(target_dir, destination)
-      template_result   = render_template(source)
-
-      File.open(final_destination, 'w') {|file| file.write(template_result)}
-
-      $stdout.puts "\tcreate\t#{destination}"
-    end
-
     def template_dir
       File.join(File.dirname(__FILE__), 'templates')
     end
 
     def create_rails_application(target_dir)
-      result = system("rails new #{self.project_name}")
+      result = system("rails new #{self.project_name} --template #{self.template_url}")
       
       $stdout.puts "\tgenerate rails app\t#{target_dir}"
-    end
-
-    def mkdir_in_target(directory)
-      final_destination = File.join(target_dir, directory)
-
-      FileUtils.mkdir final_destination
-
-      $stdout.puts "\tcreate\t#{directory}"
-    end
-
-    def touch_in_target(destination)
-      final_destination = File.join(target_dir, destination)
-      FileUtils.touch  final_destination
-      $stdout.puts "\tcreate\t#{destination}"
     end
 
     def create_version_control
@@ -222,5 +193,16 @@ class Appleseed
       # TODO do a HEAD request to see when it's ready?
       @repo.push('github')
     end
+    
+    def create_and_push_deployment
+      # Try to create a Heroku project with the given name, but fail over to a Heroku-assigned
+      # name if necessary.
+      unless system("heroku create #{project_name}")
+        result = system("heroku create")
+      end
+      
+      @repo.push('heroku')
+    end
+    
   end
 end

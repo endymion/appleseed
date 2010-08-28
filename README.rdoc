@@ -73,6 +73,35 @@ but do NOT push to Heroku:
   git commit -m "Conflict."
   git push github master
 
+= Final Product
+
+Appleseed generates a web application that's more than just the default generated Rails 3 template.
+Instead of just a default working Rails application, you also get a default ("root") controller
+and a root route to a home page.  You get a layout based on HAML, and the Blueprint CSS framework
+provided by Compass.  You get the RSpec and Cucumber testing frameworks and sample tests.  The
+final product is ready for new HTML/CSS files from graphic designers.
+
+The final product does NOT contain any database models, or an administrative back-end.  It only
+includes a default controller so that graphic designers can easily add HTML files.
+
+= Options
+
+== --nogithub
+
+You can use the --nogithub option to tell Appleseed NOT to create a new project at GitHub.
+
+== --template
+
+By default, the template in http://github.com/endymion/appleseed/raw/master/templates/default.rb
+will be applied to the new project.  You can tell Appleseed to use your own custom template with
+the --template option.  For example:
+
+  appleseed --template ~/templates/my-template.txt new-web-application
+
+A simple way to customize the Rails template that Appleseed uses is to fork the Appleseed project
+on GitHub and then edit the lib/appleseed/generator.rb file to use your forked project's
+default template URL instead of http://github.com/endymion/appleseed/raw/master/templates/default.rb
+
 == Copyright
 
 Copyright (c) 2010 Ryan Alyn Porter. See LICENSE for details.
