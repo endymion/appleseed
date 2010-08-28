@@ -1,6 +1,77 @@
-= appleseed
+= Appleseed
 
-Appleseed provides a generator for creating/kickstarting a new project.
+Appleseed provides a generator for creating a new web site project with Rails 3, adding things
+like HAML and Compass to the new project, creating a Git repository for the new project, pushing
+that repository to GitHub, and then deploying the site to Heroku.  All with one command.
+
+This utility is designed to assist graphic designers in rapidly creating new web sites, for
+high-volume web shops.  A graphic designer can create a site, push the code to GitHub, and deploy
+the site to Heroku without the assistance of a developer.  Then a developer can easily join the
+project to build out the back-end and assist the graphic designer with the front-end.
+
+= Usage
+
+== Step 1: Install Appleseed
+
+Open a Terminal window and copy the following command into the window:
+
+  gem install appleseed
+
+== Step 2: Generate Web Application Project
+
+In that same terminal, go to your local projects folder:
+
+  cd ~/projects
+  
+Then generate a new project by giving Appleseed the name of your new project:
+
+  appleseed my-new-rails-app
+
+Appleseed will create the following:
+
+  A Rails 3 web application project in ~/projects/my-new-rails-app
+  A GitHub repository at git@github.com:[you]/my-new-rails-app.git
+  A Heroku app at http://my-new-rails-app.heroku.com
+
+== Step 3: Run The Web Site
+
+Your new web application is already running on Heroku.  But for you to make changes, you'll have
+to be able to run the web site on your local computer.  You might want to open a new tab in your
+Terminal window for the server.  Then change to the new project folder in your Terminal window:
+
+  cd ~/projects/my-new-rails-app
+  
+Then run the Rails server with:
+
+  rails server
+  
+Then go to http://localhost:3000 in a web browser, and you should see your new web site.
+
+== Step 4: Make Changes
+
+After you make changes to your web site project, use these Terminal commands to push the changes
+to GitHub and Heroku:
+
+  git add .
+  git commit -m "Update."
+  git push github master
+  git push heroku master
+
+If the "git push" operation produces an error, then it probably means that somebody else has made
+a change to the same web site and you need to merge your update with their update before you can
+push your update.  Do this:
+
+  git pull github master
+
+Then after Git pulls the other person's update and merges it with your update, proceed with the
+"git push github master", above.
+
+If Git reports that there has been a conflict, then commit the conflict and push it to GitHub,
+but do NOT push to Heroku:
+
+  git add .
+  git commit -m "Conflict."
+  git push github master
 
 == Note on Patches/Pull Requests
  
