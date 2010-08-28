@@ -86,9 +86,13 @@ includes a default controller so that graphic designers can easily add HTML file
 
 = Options
 
-== --nogithub
+== --no-github
 
-You can use the --nogithub option to tell Appleseed NOT to create a new project at GitHub.
+You can use the --no-github option to tell Appleseed NOT to create a new project at GitHub.
+
+== --no-heroku
+
+You can use the --no-heroku option to tell Appleseed NOT to deploy your new web application to Heroku.
 
 == --template
 
