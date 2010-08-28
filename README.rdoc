@@ -29,9 +29,9 @@ Then generate a new project by giving Appleseed the name of your new project:
 
 Appleseed will create the following:
 
-  A Rails 3 web application project in ~/projects/my-new-rails-app
-  A GitHub repository at git@github.com:[you]/my-new-rails-app.git
-  A Heroku app at http://my-new-rails-app.heroku.com
+  * A Rails 3 web application project in ~/projects/my-new-rails-app
+  * A GitHub repository at git@github.com:[you]/my-new-rails-app.git
+  * A Heroku app at http://my-new-rails-app.heroku.com
 
 == Step 3: Run The Web Site
 
