@@ -5,12 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{appleseed}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Alyn Porter"]
-  s.date = %q{2010-08-27}
+  s.date = %q{2010-08-28}
+  s.default_executable = %q{appleseed}
   s.description = %q{Generator for a Rails 3 app that will also push the project to GitHub and Heroku.}
+  s.executables = ["appleseed"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -22,16 +24,32 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "appleseed.gemspec",
+     "bin/appleseed",
      "lib/appleseed.rb",
+     "lib/appleseed/application.rb",
+     "lib/appleseed/errors.rb",
+     "lib/appleseed/generator.rb",
+     "lib/appleseed/generator/github_mixin.rb",
+     "lib/appleseed/options.rb",
      "spec/appleseed_spec.rb",
      "spec/spec.opts",
-     "spec/spec_helper.rb"
+     "spec/spec_helper.rb",
+     "templates/compass.rb",
+     "templates/cucumber.rb",
+     "templates/default.rb",
+     "templates/gitignore.rb",
+     "templates/haml.rb",
+     "templates/jquery.rb",
+     "templates/remove_prototype.rb",
+     "templates/root_controller.rb",
+     "templates/rspec.rb"
   ]
   s.homepage = %q{http://github.com/endymion/appleseed}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Kick-start a Rails 3 project.}
+  s.summary = %q{Kick-start a Rails 3 project, push it to GitHub, deploy it to Heroku.}
   s.test_files = [
     "spec/appleseed_spec.rb",
      "spec/spec_helper.rb"
