@@ -195,13 +195,15 @@ class Appleseed
     end
     
     def create_and_push_deployment
-      # Try to create a Heroku project with the given name, but fail over to a Heroku-assigned
-      # name if necessary.
-      unless system("heroku create #{project_name}")
-        result = system("heroku create")
-      end
+      Dir.chdir(target_dir) do
+        # Try to create a Heroku project with the given name, but fail over to a Heroku-assigned
+        # name if necessary.
+        unless system("heroku create #{project_name}")
+          result = system("heroku create")
+        end
       
-      @repo.push('heroku')
+        @repo.push('heroku')
+      end
     end
     
   end
