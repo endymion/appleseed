@@ -112,6 +112,14 @@ A simple way to customize the Rails template that Appleseed uses is to fork the 
 on GitHub and then edit the lib/appleseed/generator.rb file to use your forked project's
 default template URL instead of http://github.com/endymion/appleseed/raw/master/templates/default.rb
 
+== Prerequisites
+
+* Git (installed on Snow Leopard)
+* Ruby 1.8.7 (installed on Snow Leopard)
+* RubyGems (installed on Snow Leopard)
+* Rails ("gem install rails --pre")
+* Heroku ("gem install heroku")
+
 == Copyright
 
 Copyright (c) 2010 Ryan Alyn Porter. See LICENSE for details.
