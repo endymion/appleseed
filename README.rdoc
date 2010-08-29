@@ -85,7 +85,7 @@ Appleseed generates a web application that's more than just the default generate
 Instead of just a default working Rails application, you also get a default ("root") controller
 and a root route to a home page.  You get a layout based on HAML, and the Blueprint CSS framework
 provided by Compass.  You get the RSpec and Cucumber testing frameworks and sample tests.  The
-final product is ready for new HTML/CSS files from graphic designers.
+final product is ready for new HTML/CSS files and images from graphic designers.
 
 The final product does NOT contain any database models, or an administrative back-end.  It only
 includes a default controller so that graphic designers can easily add HTML files.
