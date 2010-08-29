@@ -78,6 +78,10 @@ but do NOT push to Heroku:
 Deploying your web site after you make changes is really easy.  Just push to the "heroku" remote:
 
   git push heroku master
+  
+== Step 6: Goto Step 4
+
+Repeat until the money runs out.
 
 = Final Product
 
