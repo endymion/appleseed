@@ -73,6 +73,12 @@ but do NOT push to Heroku:
   git commit -m "Conflict."
   git push github master
 
+== Step 5: Deploy Your Changes
+
+Deploying your web site after you make changes is really easy.  Just push to the "heroku" remote:
+
+  git push heroku master
+
 = Final Product
 
 Appleseed generates a web application that's more than just the default generated Rails 3 template.
