@@ -118,11 +118,40 @@ default template URL instead of http://github.com/endymion/appleseed/raw/master/
 
 == Prerequisites
 
+Tools
+
 * Git (installed on Snow Leopard)
 * Ruby 1.8.7 (installed on Snow Leopard)
 * RubyGems (installed on Snow Leopard)
-* Rails ("gem install rails --pre")
+
+Ruby Gems
+
+* Rails ("gem install rails")
 * Heroku ("gem install heroku")
+
+GitHub Account
+
+You will need an account at GitHub[http://www.github.com].  {Set up}[http://help.github.com/git-email-settings/] your GitHub name and email
+on your local computer.  Then also {set up}[http://github.com/blog/180-local-github-config]
+your GitHub user and API token on your local computer.  Then make sure that you
+have an {SSH key}[http://help.github.com/mac-key-setup/] set up and added to your
+GitHub account.
+
+Heroku Account
+
+You will also need an account at Heroku[http://docs.heroku.com/heroku-command].  Install
+the Heroku gem and then use "heroku keys:add" to link your local computer to your Heroku
+account.
+
+Appleseed
+
+Once you have the above prerequisites, install Appleseed with "gem install appleseed".  Now
+you're ready to generate web sites!
+
+== Inspiration
+
+* Jeweler[http://github.com/technicalpickles/jeweler]
+* {Johnny Appleseed}[http://en.wikipedia.org/wiki/Johnny_Appleseed]
 
 == Copyright
 
