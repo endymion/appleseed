@@ -22,6 +22,8 @@ body.two-col {
 }
 END
 
+run 'compass compile'
+
 run 'rm app/views/layouts/application.html.haml'
 file 'app/views/layouts/application.html.haml', <<-END
 !!!
@@ -58,11 +60,17 @@ file 'app/views/root/root.html.haml', <<-END
   %h1
     Welcome to your new web site!
   %p
-    This content copy is in the root action template, in the root controller, in app/views/root/root.html.html
-  %p
     This web site is powered by a Rails 3 web application.  Lots of documentation is available
     for Rails.  Start
     %a{:href => 'http://weblog.rubyonrails.org/2010/8/28/rails-has-great-documentation'} here.
+  %p
+    The contents of this page are in the root action template, in the root controller,
+    in app/views/root/root.html.haml.  The template files for this web application project are
+    in
+    %a{:src => 'http://haml-lang.com/docs.html'} HAML
+    , which is a powerful shorthand notation for quickly writing HTML that coordinates
+    beautifully with SCSS for styling the page.  The HAML documentation is
+    %a{:src => 'http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html'} here.
   %p
     This page is styled using
     %a{:href => 'http://www.blueprintcss.org/'} Blueprint.
