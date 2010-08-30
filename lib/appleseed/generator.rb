@@ -50,11 +50,11 @@ class Appleseed
 
       self.target_dir             = self.project_name
 
-      self.summary                = options[:summary] || 'TODO: one-line summary of your gem'
-      self.description            = options[:description] || 'TODO: longer description of your gem'
+      self.summary                = options[:summary] || 'TODO: one-line summary of your web site'
+      self.description            = options[:description] || 'TODO: longer description of your web site'
 
-      # self.template_url    = options[:template_url] || 'http://github.com/endymion/appleseed/raw/master/templates/default.rb'
-      self.template_url    = options[:template_url] || 'http://localhost/projects/appleseed/templates/default.rb'
+      self.template_url    = options[:template_url] || 'http://github.com/endymion/appleseed/raw/master/templates/default.rb'
+      # self.template_url    = options[:template_url] || 'http://localhost/projects/appleseed/templates/default.rb'
 
       self.user_name       = options[:user_name]
       self.user_email      = options[:user_email]
