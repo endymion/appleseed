@@ -1,7 +1,3 @@
-gem 'haml'
-
-run 'bundle install'
-
 run 'haml --rails .'
 
 run 'git clone git://github.com/psynix/rails3_haml_scaffold_generator.git lib/generators/haml'

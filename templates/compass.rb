@@ -1,7 +1,3 @@
-gem "compass"
-
-run 'bundle install'
-
 run 'compass init rails . --using blueprint --sass-dir app/stylesheets --css-dir public/stylesheets/compiled'
 
 run 'compass compile'

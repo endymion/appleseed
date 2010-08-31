@@ -1,7 +1,4 @@
-gem "rspec-rails", ">= 2.0.0.beta.17"
-gem "factory_girl"
-
-generate("rspec")
+generate 'rspec'
 
 gsub_file 'config/application.rb', /^\s*config.generators do \|g\|$/, %{
   config.generators do |g|
