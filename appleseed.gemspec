@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{appleseed}
-  s.version = "0.1.3"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Alyn Porter"]
-  s.date = %q{2010-08-30}
+  s.date = %q{2010-08-31}
   s.default_executable = %q{appleseed}
   s.description = %q{Generator for a Rails 3 app that will also push the project to GitHub and Heroku.}
   s.executables = ["appleseed"]
@@ -35,15 +35,21 @@ Gem::Specification.new do |s|
      "spec/appleseed_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
+     "templates/bundle_install.rb",
      "templates/compass.rb",
+     "templates/compass_gem.rb",
      "templates/cucumber.rb",
+     "templates/cucumber_gems.rb",
      "templates/default.rb",
+     "templates/development.rb",
      "templates/gitignore.rb",
      "templates/haml.rb",
+     "templates/haml_gem.rb",
      "templates/jquery.rb",
-     "templates/remove_prototype.rb",
+     "templates/jquery_gem.rb",
      "templates/root_controller.rb",
-     "templates/rspec.rb"
+     "templates/rspec.rb",
+     "templates/rspec_gem.rb"
   ]
   s.homepage = %q{http://github.com/endymion/appleseed}
   s.rdoc_options = ["--charset=UTF-8"]
