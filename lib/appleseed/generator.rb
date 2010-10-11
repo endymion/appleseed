@@ -51,7 +51,6 @@ class Appleseed
 
       # Adjust project name so that it's a valid project name on both GitHub and also Heroku.
       self.project_name = self.project_name.gsub /\W/, '-'
-      puts "NEW PROJECT NAME: #{self.project_name}"
 
       self.target_dir             = self.project_name
 
