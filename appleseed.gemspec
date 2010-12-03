@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{appleseed}
-  s.version = "0.3.1"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Alyn Porter"]
-  s.date = %q{2010-10-11}
+  s.date = %q{2010-12-03}
   s.default_executable = %q{appleseed}
   s.description = %q{Generator for a Rails 3 app that will also push the project to GitHub and Heroku.}
   s.executables = ["appleseed"]
